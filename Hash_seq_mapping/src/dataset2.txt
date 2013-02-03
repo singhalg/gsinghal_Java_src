@@ -1,0 +1,33 @@
+----- Transcript file dataset2.txt started Mon Oct 11 10:51:05 CDT 2010
+CORPUS: 90494 bases
+PATTERN: 162341 bases
+Match length? 18
+
+After creating the table, it holds 153381 sequences of length 18
+After removing the mask sequences, the table holds 153381 sequences of length 18
+
+377 10161 attacaggcgtgagccac
+1042 110279 gagaccctgtctcaaaaa
+2654 161826 gccaggcatggtggcaca
+21413 10161 attacaggcgtgagccac
+22701 100060 ttttttttttttttttta
+23131 10161 attacaggcgtgagccac
+23132 10162 ttacaggcgtgagccacc
+34636 110278 tgagaccctgtctcaaaa
+34637 110279 gagaccctgtctcaaaaa
+45878 92082 ttagccaggcatggtggc
+46414 56985 caccaccacacccagcta
+46415 56986 accaccacacccagctaa
+49282 110278 tgagaccctgtctcaaaa
+49283 110279 gagaccctgtctcaaaaa
+57918 10161 attacaggcgtgagccac
+57919 10162 ttacaggcgtgagccacc
+61571 50241 gtttgtttgtttgttttt
+62613 92855 gaggctgaggcaggaaga
+62614 92856 aggctgaggcaggaagat
+78918 135264 gtgattctcctgcctcag
+79524 135264 gtgattctcctgcctcag
+79696 10161 attacaggcgtgagccac
+
+There were 22 matches found.
+----- Transcript file dataset2.txt closed Mon Oct 11 10:51:09 CDT 2010

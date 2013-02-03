@@ -1,0 +1,228 @@
+package lab9;
+
+import java.util.NoSuchElementException;
+
+/**
+ * Implements a Map as a binary search tree of (key,value) pairs.
+ * CSE131 Lab 9
+ * @author
+ * @version 1.0
+ * Date:
+ */
+public class TreeMap<K extends Comparable<K>,V> implements Map<K,V> {
+	TreeNode<K, V> root;
+
+
+	public void  put (K key, V value){
+
+
+		TreeNode<K, V> newnode = new TreeNode<K, V> (key, value, null, null);
+
+		TreeNode<K, V> current = root;
+
+
+		if (root == null){
+			root = newnode;
+		}
+
+		else {
+			if (key.compareTo(root.Key)==0){
+				root.Value = value;
+			}
+			else {
+				while(current!= null){
+					if(key.compareTo(current.Key)==0){
+						current.Value = value;
+						return;
+					}
+					else if (key.compareTo(current.Key)>0){
+						if (current.right!=null){
+
+							current = current.right;
+						}
+						else{
+							current.right = newnode;
+							return;
+						}
+
+					}
+					else if (key.compareTo(current.Key)<0){
+						if(current.left!= null){
+							current = current.left;
+						}
+						else{
+							current.left = newnode;
+							return;
+						}
+
+					}
+
+				}
+
+			}
+		}
+
+	}
+
+
+
+
+
+
+	public V get(K key) {
+
+		TreeNode <K,V> current = root;
+		while(current != null){
+
+			if(key.compareTo(current.Key)==0){
+				return current.Value;
+			}
+			else if (key.compareTo(current.Key)>0){
+				current= current.right;
+
+			}
+			else if (key.compareTo(current.Key)<0){
+				current = current.left;
+			}
+		}
+		throw new NoSuchElementException();
+
+
+	}
+
+
+
+	public boolean contains(K key) {
+		TreeNode <K,V> current = root;
+		while(current != null){
+
+			if(key.compareTo(current.Key)==0){
+				return true;
+			}
+			else if (key.compareTo(current.Key)>0){
+				current= current.right;
+
+			}
+			else if (key.compareTo(current.Key)<0){
+				current = current.left;
+			}
+		}
+		return false;
+	}
+
+
+	//===================== Extension =====================================
+	/**
+	 * param key : removes the TreeNode associated with key
+	 * returns true if it finds the TreeNode ; also removes the TreeNode
+	 * if it finds the node associated with the key, it calls the successor() method on the node
+	 * successor method return a new retNode which can replace the node to be deleted
+	 * successor() also deletes the original copy of the root element of retNode
+	 */
+	public boolean remove(K key) {
+
+		if(key.compareTo(root.Key)==0){
+			root = helpCompare(root);
+			return true;
+		}
+		else{
+			TreeNode<K, V> current = root;
+			while(current!= null){ 
+				// helpCompare() does the comparisons and returns the node will replace current.right (Supplied to it by successor())
+				//Also, helpCompare() calls successor() method when the node to be deleted has both left and right subtrees
+				// successor(node) then does the actual deletion
+				if((current.right!=null) &&(key.compareTo(current.right.Key)==0)){//COMPARING THE KEY TO CURRENT.RIGHT 
+					current.right= helpCompare(current.right);
+					return true;
+				}
+				else if ((current.left!=null)&&(key.compareTo(current.left.Key)==0)){ //COMPARING THE KEY TO CURRENT.LEFT
+					current.left = helpCompare(current.left);
+					return true;
+				}
+				// IF KEY NOT FOUND IN CURRENT.LEFT OR CURRENT.RIGHT
+				else if (key.compareTo(current.Key)>0){
+					current = current.right;
+				}
+				else if (key.compareTo(current.Key)<0){
+					current = current.left;
+				}
+			}			
+		}
+		return false;//REACHED HERE ONLY IF KEY IS NOT FOUND
+	}
+
+
+
+	/**
+	 * This method is called by remove method when the key supplied to remove method has been found to match some node.
+	 * helpCompare(node) does the actual comparisons, and it returns the treenode which will replace the node.
+	 * helpCompare() further calls successor() in a special case when node has both left and right subtrees.
+	 * successor() then does the deletion and returns a new node that can replace the node to be deleted to the helpCompare method
+	 * @param : node is the TreeNode the key of which has been found equal to the key supplied to remove method
+	 * @return : the TreeNode which will replace the node
+	 */
+	private TreeNode<K,V> helpCompare(TreeNode<K,V> node){
+		if((node.left == null)&& (node.right==null)){ // No left or right subtree
+			return null;
+		}
+		else if((node.left == null)^ (node.right==null)){ // Either Left or Right Subtree is Null
+			if((node.left == null)){ // When Left Subtree is null
+				return node.right;  // make the right subtree as the node
+
+			}
+			else if ((node.right == null)){ // When Right Subtree is null
+				// make the left subtree as the node
+				return node.left;
+			}
+		}
+		else if ((node.left != null)&& (node.right!=null)){ // Both Left and Right subtrees are NOT null
+			TreeNode<K,V> succ = successor(node);  // successor method not only returns the new node which can replace the supplied node,
+			// but also deletes the original copy of the new node in its own subtree
+
+			// replacing the node to be removed with successor
+			return succ;
+		}
+		return null; // never visited
+	}
+
+
+
+
+	/**
+	 * Helper method for remove() method; returns a new retNode which replaces the node
+	 * this method is invoked only when the node has both left and right subtree
+	 * so, BOTH node.left and node.right are NOT null
+	 * @param node
+	 * @returns returns retNode, which has key and value of the biggest element in the node's left subtree(the node which was just removed)
+	 * also deletes the original copy of the biggest element in the node's left subtree
+	 * retNode.left  is decided upon context
+	 * retNode.right = node.right
+	 * Later, in helpCompare() method, node is replaced with retNode
+	 *
+	 * */
+	private TreeNode<K,V> successor(TreeNode<K,V> node){
+		TreeNode<K,V> curr = node;
+		if(curr.left.right==null){  //curr.left is the biggest element in this subtree
+			curr.left.right = node.right;
+			return curr.left; // 
+		}
+		else{
+			curr = curr.left;
+			while(curr.right.right!=null){// keep going right as long as curr.right.right is not null 
+				curr = curr.right;
+			}
+			TreeNode<K,V> retNode = new TreeNode<K,V> (curr.right.Key, curr.right.Value, node.left,node.right);
+			curr.right = curr.right.left;  //deleting the original copy of the node
+			return retNode;
+		}
+	}
+
+	public String toString() {
+		TreeNode<K,V> current = root;
+		int j = 0;
+
+		return current.toStringInOrder(current, j); // toStringInOrder is defined in TreeNode class
+
+	}
+
+}

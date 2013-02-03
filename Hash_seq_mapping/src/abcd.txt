@@ -1,0 +1,11 @@
+----- Transcript file abcd.txt started Mon Oct 11 08:44:59 CDT 2010
+CORPUS: 98764 bases
+PATTERN: 88521 bases
+Match length? 5
+
+After creating the table, it holds 88517 sequences of length 5
+After removing the mask sequences, the table holds 88517 sequences of length 5
+
+
+There were 0 matches found.
+----- Transcript file abcd.txt closed Mon Oct 11 08:45:07 CDT 2010

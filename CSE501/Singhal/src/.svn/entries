@@ -1,0 +1,70 @@
+9
+
+dir
+45
+svn+ssh://gs6@grid.cec.wustl.edu/project/cec/class/cse131/spring10/students/Singhal-406815/src
+svn+ssh://gs6@grid.cec.wustl.edu/project/cec/class/cse131/spring10/students/Singhal-406815
+
+
+
+2010-04-20T12:04:23.640501Z
+45
+gs6
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a1d1ba34-a7a6-4025-8462-7596ccd0bebd
+
+arch
+dir
+
+julia
+dir
+
+lab0
+dir
+
+lab1
+dir
+
+lab2
+dir
+
+lab3
+dir
+
+lab4
+dir
+
+lab5
+dir
+
+lab6
+dir
+
+lab7
+dir
+
+lab8
+dir
+
+lab9
+dir
+
+nip
+dir
+
+tdd
+dir
+

@@ -1,0 +1,35 @@
+Name:
+CSE131 Lab 0
+
+Using the CSE131 web site, answer the following questions by typing them into this file.
+The file will be saved in your repository when you commit.
+
+1. When and where are your CSE131 instructor's office hours?
+
+2. How many modules, module extensions and bridges must be completed to earn a B in CSE131?
+In addition, what does it take to earn a B+?
+
+3. What percentage must you earn on a quiz for a module to be excused from
+taking the corresponding section of the midterm or final exam?
+
+4. What percentage must you earn on a lab assignment (or optional extension or bridge) to
+receive credit for that part of a module?
+
+5. How much time should you expect to spend on CSE131?  (Hint: Look at the FAQ page.)
+
+6. Name one reason why class attendance is so important in CSE131.
+(Hint: Find the Attendance Policy on the home page.)
+
+7. According to the CSE131 Collaboration Policy, would you be cheating if you
+helped someone find an error in their program?
+
+8. What is the definition of abstraction?
+
+9. According to the course calendar, what is the due date for Lab 2?
+
+10. What is the penalty for submitting a lab after the due date?
+
+11. How many times during the semester can you revise an old lab assignment
+and submit it for regrading?
+
+12. [ Optional ] Tell us (TAs) something interesting about yourself (hobby, etc.).

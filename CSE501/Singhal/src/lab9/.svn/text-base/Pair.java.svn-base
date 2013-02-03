@@ -1,0 +1,32 @@
+package lab9;
+
+public class Pair<K,V> {
+	
+	K Key;
+	V Value;
+
+	public Pair(K Key, V Value){
+		this.Key = Key;
+		this.Value = Value;
+		
+	}
+	/**
+	 * disregard
+	 * @param arrayMap
+	 * @param i
+	 * @return
+	 */
+	public String toStringAr(Pair<K,V>[] arrayMap, int i){
+		//for (int i = 0; i<arrayMap.length; i++){
+	
+		if(i>arrayMap.length-1)
+			return "";
+		
+		else
+		return "("+ arrayMap[i].Key + "," + arrayMap[i].Value + ")" + "-->" + toStringAr(arrayMap, i+1);
+		
+	
+	}
+	
+	
+}

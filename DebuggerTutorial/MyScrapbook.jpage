@@ -1,0 +1,22 @@
+Book b1 = new 
+
+
+// example 2: error in inner try block
+long x = 0;
+try {
+	x = 1 / 1;
+   try {
+	   x = 1 / 0;
+   }
+   finally {
+	   x = 1 / 1;
+	   System.out.println("inner finally executes");
+   }
+}
+catch (Exception e) {
+	System.out.println("exception caught by outer block");
+}
+System.out.println("life goes on...");
+
+MyLibrary ml1 = new MyLibrary("test");
+ml1

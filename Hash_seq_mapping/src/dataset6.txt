@@ -1,0 +1,4 @@
+----- Transcript file dataset6.txt started Mon Oct 11 10:58:00 CDT 2010
+CORPUS: 90494 bases
+PATTERN: 162341 bases
+Match length? 

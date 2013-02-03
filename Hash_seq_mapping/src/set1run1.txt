@@ -1,0 +1,11 @@
+----- Transcript file set1run1.txt started Mon Oct 11 09:38:16 CDT 2010
+CORPUS: 38 bases
+PATTERN: 27 bases
+Match length? 3
+
+After creating the table, it holds 25 sequences of length 3
+After removing the mask sequences, the table holds 25 sequences of length 3
+
+
+There were 0 matches found.
+----- Transcript file set1run1.txt closed Mon Oct 11 09:38:17 CDT 2010

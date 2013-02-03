@@ -1,0 +1,130 @@
+package lab9;
+
+
+/**
+ * Implements a Map as an array of (key,value) pairs.
+ * CSE131 Lab 9
+ * Date:
+ */
+
+
+public class ArrayMap <K extends Comparable<K>,V> implements Map<K,V>{
+	Pair<K,V>[] Element ;
+	private final int LL =-2;
+	private final int UL = -1;
+	int max;
+	
+	public ArrayMap(){
+		Element = (Pair<K,V>[]) new Pair[100];
+		max =0;
+	}
+
+
+	/**
+	 * 
+	 * @param min lower bound index of the search space
+	 * @param max upper bound index of the search space
+	 * @param key, which is being compared
+	 * @return ll, if the key is smaller than the smallest key in the array
+	 * 		   ul, if the key is larger than the largest key in the array
+	 * 			else, returns the key where the value has to be inserted
+	 */
+	private int bsPut(int min, int max, K key, V value){
+
+
+			/**
+		 *  min := 1;
+			max := N; {array size: var A : array [1..N] of integer}
+			repeat
+		mid := (min + max) div 2;
+		if x > A[mid] then
+			min := mid + 1
+		else 
+			max := mid - 1;
+			until (A[mid] = x) or (min > max);
+		 */
+
+
+		int mid = (min+max)/2;
+		while(min<=max){
+			mid = (max+min)/2;
+			if(key.compareTo(Element[mid].Key) == 0){
+				Element[mid].Value = value;
+				return -2;
+			}
+			else if(key.compareTo(Element[mid].Key) > 0){
+				min = mid+1;
+
+			}
+			else{
+				max = mid-1;
+			}
+
+		}
+
+		return max;
+
+		// in all cases, the key is to be inserted betweem max and min. Here, max < min.
+		// insert after max
+	}
+
+
+
+
+
+	/**
+	 * Inserts a key value pair after the supplied index in the array.
+	 * @param index
+	 * @param key
+	 * @param value
+	 */
+	private void insert(int index, K key, V value ){
+		int i = max;
+		while (i>index){
+			Element[i+1] = Element[i];
+			i--;
+		}
+		Element[index+1].Key = key;
+		Element[index+1].Value = value;
+	}
+
+
+	
+	
+
+
+
+	public void put(K key, V value) {
+
+		int min = 0;
+		if(this.bsPut(min, max, key, value)== -2){
+			//do nothing
+		}
+
+		else{
+			insert(this.bsPut(min, max, key, value), key, value);
+			max++;
+		}
+
+	}
+	public V get(K key) {
+		return null;
+	}
+
+	public boolean contains(K key){
+		return true; 
+	}
+
+	public boolean remove(K key){
+		return true;
+	}
+	public String toString(){
+	int i = 0;
+		while(Element[i]!= null){
+			System.out.print("("+ Element[i].Key + "," + Element[i].Value + ")" + "-->");	
+			i++;		
+		}
+		return"";
+	}
+
+}

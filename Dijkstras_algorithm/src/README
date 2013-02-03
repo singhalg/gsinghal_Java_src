@@ -1,0 +1,29 @@
+The data files allEvents and 20events were created from the URL
+
+  http://www.gsu.edu/other/timeline.html
+
+Events In Science, Mathematics, and Technology - Version 3.0
+
+William Nielsen Brandt - (niel@cast0.ast.cam.ac.uk) 
+
+------------------------------------
+Science History Timeline Version 3.0
+------------------------------------
+
+This document is copyright Niel Brandt 1994. You are allowed to copy,
+distribute, and edit this document at will without any obligation as long
+as you do not remove the above header. Reproduction and distribution for
+personal profit is not permitted.
+
+I added some additional events to teh allEvents data set to bring it
+to 1000 events.  Most of the added events were found
+
+    http://150.wustl.edu/history.html
+
+The format for allEvents and 20events is as follows.  For each event
+there is a line that first has the date, then there is a tab which
+is followed by a description for the event that is up to 250 characters
+long.  
+
+You are welcome to change the format of these data files if that makes your
+task easier but you cannot change the contents.

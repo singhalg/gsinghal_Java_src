@@ -1,0 +1,49 @@
+package tdd;
+
+import java.util.Iterator;
+
+public class DoublyLinkedListOfInts implements IntList {
+
+	@Override
+	public void addFirst(int num) {
+		// FIXME Auto-generated method stub
+
+	}
+
+	@Override
+	public void addLast(int num) {
+		// FIXME Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean contains(int num) {
+		// FIXME Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int indexOf(int treasure) {
+		// FIXME Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean remove(int goner) {
+		// FIXME Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int size() {
+		// FIXME Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Iterator<Integer> iterator() {
+		// FIXME Auto-generated method stub
+		return null;
+	}
+
+}

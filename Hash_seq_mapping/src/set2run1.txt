@@ -1,0 +1,5 @@
+----- Transcript file set2run1.txt started Mon Oct 11 09:41:25 CDT 2010
+CORPUS: 19810 bases
+PATTERN: 12460 bases
+MASK: 1079 bases
+Match length? 

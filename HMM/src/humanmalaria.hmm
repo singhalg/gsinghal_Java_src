@@ -1,0 +1,9 @@
+2 ACGT
+State: Human 0.5
+ .31 .19 .19 .31
+ Human 0.68
+ Malaria 0.32
+State: Malaria 0.5
+ .35 .15 .15 .35
+ Human 0.33
+ Malaria 0.67

@@ -1,0 +1,27 @@
+----- Transcript file dataset1.txt started Mon Oct 11 10:49:22 CDT 2010
+CORPUS: 38 bases
+PATTERN: 27 bases
+MASK: 27 bases
+Match length? 3
+
+After creating the table, it holds 20 sequences of length 3
+After removing the mask sequences, the table holds 9 sequences of length 3
+
+0 2 cag
+0 11 cag
+1 3 aga
+1 12 aga
+6 4 gat
+8 1 tca
+8 8 tca
+9 2 cag
+9 11 cag
+13 22 att
+14 23 ttc
+15 1 tca
+15 8 tca
+26 15 cta
+29 21 cat
+
+There were 15 matches found.
+----- Transcript file dataset1.txt closed Mon Oct 11 10:49:24 CDT 2010

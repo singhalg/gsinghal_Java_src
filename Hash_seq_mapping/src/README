@@ -1,0 +1,132 @@
+README FOR TEST CASES
+
+Here are some test cases on which to exercise your hash table code.
+
+----------------------------------------------------------------------
+
+** CASE 1
+
+These are some very short sequences that I made up just to help you test your
+implementation.  You should use match length = 3 for what you submit.  The
+output should be:
+
+CORPUS: 38 bases
+PATTERN: 27 bases
+MASK: 27 bases
+Match length? 3
+
+After creating the table, it holds 20 sequences of length 3
+After removing the mask sequences, the table holds 9 sequences of length 3
+
+0 2 cag
+0 11 cag
+1 3 aga
+1 12 aga
+6 4 gat
+8 1 tca
+8 8 tca
+9 2 cag
+9 11 cag
+13 22 att
+14 23 ttc
+15 1 tca
+15 8 tca
+26 15 cta
+29 21 cat
+
+There were 15 matches found.
+
+----------------------------------------------------------------------
+
+** CASE 2
+
+These sequences come from the beta globin locus control region.  This
+part of the genome encodes several different forms of the hemoglobin
+protein used to transport oxygen in red blood cells.  The locus
+control region is part of a mechanism that controls which of these
+different forms of hemoglobin is produced at each stage of a person's
+life (fetal, neonatal, and afterwards).
+
+The two sequences in this case come from the human and mouse genomes.
+If you compare these sequences, you'll get a large number of
+uninteresting matches with sequences like "ttttttttttttttttt" and
+"acacacacacac".  These matches are called "short tandem repeats."
+They are not autonomous like the (much longer!) interspersed repeats;
+rather, they probably arise from copying errors during DNA
+replication.  To remove most of these repeats from the output, I've
+provided a mask sequence that lists some common ones.
+
+You should use a match length = 15 for what you submit.  The output you
+should get is:
+
+CORPUS: 19810 bases
+PATTERN: 12460 bases
+MASK: 1079 bases
+Match length? 15
+
+After creating the table, it holds 11570 sequences of length 15
+After removing the mask sequences, the table holds 11559 sequences of length 15
+
+269 143 acaaaaacaaacaaa
+277 147 aaacaaacaaaaaac
+4130 5324 actgagctcagaaga
+4131 5325 ctgagctcagaagag
+4132 5326 tgagctcagaagagt
+4368 5534 tttgactcagcaaac
+4420 5586 agatgtgtctatcag
+4421 5587 gatgtgtctatcaga
+4422 5588 atgtgtctatcagag
+4423 5589 tgtgtctatcagagg
+4424 5590 gtgtctatcagaggt
+8530 11918 tgagtcatgctgagg
+8531 11919 gagtcatgctgaggc
+8532 11920 agtcatgctgaggct
+8533 11921 gtcatgctgaggctt
+8534 11922 tcatgctgaggctta
+8535 11923 catgctgaggcttag
+8536 11924 atgctgaggcttagg
+8537 11925 tgctgaggcttaggg
+8538 11926 gctgaggcttagggt
+8539 11927 ctgaggcttagggtg
+8540 11928 tgaggcttagggtgt
+8541 11929 gaggcttagggtgtg
+8542 11930 aggcttagggtgtgt
+8543 11931 ggcttagggtgtgtg
+13090 12256 cacacacacacacat
+
+There were 26 matches found.
+
+You can see that the positions of most of the matches fall into
+distinct clusters, which correspond to individual "hot-spots" within
+the region that contain the conserved regulatory sites.
+
+----------------------------------------------------------------------
+
+** CASE 3
+
+These sequences come from the mnd2 locus.  The mnd2 gene encodes a
+protein important to correct functioning of the nerves that carry
+impulses from the brain to the muscles.  In mice, mutations in this
+gene cause "motor neuron degeneration 2" syndrome, which is closely
+related to certain kinds of muscular dystrophy in humans.
+ 
+The two sequences in this case come from the human and mouse genomes.
+There is no mask sequence.   Submit your output for a match length
+of 18.
+
+----------------------------------------------------------------------
+
+** CASE 4
+
+These sequences come from the Bruton's tyrosine kinase (BTK) locus.
+The BTK gene encodes a protein that transduces signals to activate
+cells in the immune system.  Mutations in this gene cause a severe
+type of inherited immunodeficiency called agammaglobulinemia.
+
+The two sequences in this case again come from the human and mouse
+genomes.  I've removed the common repeats with a program called
+RepeatMasker, which replaces them with X's.  There is a mask sequence
+that filters out most of the matches between these X's.  This locus
+contains regions of very high similarity, so to avoid generating huge
+amounts of output, submit your output for a match length of 65.
+

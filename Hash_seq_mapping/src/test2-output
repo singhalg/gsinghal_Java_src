@@ -1,0 +1,12 @@
+----- Transcript file test2-output started Mon Oct 11 09:42:30 CDT 2010
+CORPUS: 19810 bases
+PATTERN: 12460 bases
+MASK: 1079 bases
+Match length? 15
+
+After creating the table, it holds 12446 sequences of length 15
+After removing the mask sequences, the table holds 12446 sequences of length 15
+
+
+There were 0 matches found.
+----- Transcript file test2-output closed Mon Oct 11 09:42:35 CDT 2010
